@@ -10,7 +10,8 @@ The user can enter each transmittance coefficient and controller parameters (Kp 
 
 To calculate the transmittance of the system, I used the NumPy library. In the transmittance() function, the transmittance coefficients and controller parameters are taken and the numerator and denominator of the transmittance of the closed system are created:
 
-G(s) = ((Kd*s+Kp)*(a1*s+a0)*e^(-Tp*s))/((b2*s^2+(b1+Kd*s)*s+(b0+Kp)*(Td*s+1)) 
+![image](https://github.com/Gawendz/Control-System-Simulator-with-PD-Regulator/assets/105167719/bdb3d1ae-aa72-4dac-90fa-9fc1ffb56c36)
+
 
 Based on the introduced values ​​of transmittance coefficients and PD controller parameters, a differential equation describing the system and excitation is defined. The initial value for the system response is determined. Then, in the loop for each time step 'i', the value of the derivative of the function, i.e. the error, is calculated based on the difference between the excitation and the current response of the system. The value of the system's response for the next time step is approximated by adding the product of the time step and the derivative to the previous response value, and the obtained response of the system is recorded in a table that will be used to draw a graph.
 
